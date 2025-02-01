@@ -85,7 +85,7 @@ resource "aws_dynamodb_table" "rss_reader" {
 resource "aws_cloudwatch_event_rule" "every_hour_rss_reader" {
   name        = "lambda-trigger-every-hour-rss-reader"
   description = "Trigger Lambda every hour"
-  schedule_expression = "rate(5 minutes)"
+  schedule_expression = "rate(1 hour)"
 }
 
 resource "aws_cloudwatch_event_target" "lambda_target_rss_reader" {
